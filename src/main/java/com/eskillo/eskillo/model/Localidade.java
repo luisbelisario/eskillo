@@ -2,21 +2,25 @@ package com.eskillo.eskillo.model;
 
 public class Localidade {
     
-    private Long id;
+    private int id;
     private String nome;
     private String uf;
 
-    public Localidade(Long id, String nome, String uf) {
+    public Localidade() {
+
+    }
+
+    public Localidade(int id, String nome, String uf) {
         this.id = id;
         this.nome = nome;
         this.uf = uf;
     }
 
-    public Long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -37,10 +41,15 @@ public class Localidade {
     }
 
     @Override
+    public String toString() {
+        return "Localidade [id=" + id + ", nome=" + nome + ", uf=" + uf + "]";
+    }
+
+    @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
-        result = prime * result + ((id == null) ? 0 : id.hashCode());
+        result = prime * result + id;
         return result;
     }
 
@@ -53,11 +62,9 @@ public class Localidade {
         if (getClass() != obj.getClass())
             return false;
         Localidade other = (Localidade) obj;
-        if (id == null) {
-            if (other.id != null)
-                return false;
-        } else if (!id.equals(other.id))
+        if (id != other.id)
             return false;
         return true;
     }
+    
 }
