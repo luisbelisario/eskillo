@@ -34,7 +34,7 @@ public class LocalidadeController {
     }
 
     @DeleteMapping(value="/dellocalidade/{id}")
-    public String deletaLocalidade(@RequestBody Long id) {
+    public String deletaLocalidade(@PathVariable Long id) {
         bd.removerLocalidade(id);
         return "Local removido com sucesso!";
    }
