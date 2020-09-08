@@ -1,6 +1,8 @@
 package com.eskillo.eskillo.model;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Perfil {
     
@@ -16,6 +18,12 @@ public class Perfil {
     private String cidade;
     private Date dataNascimento;
     private boolean visibilidadePerfil;
+
+    private List<Experiencia> experiencias = new ArrayList<>();
+    private List<Formacao> formacoes = new ArrayList<>();
+    private List<Curso> cursos = new ArrayList<>();
+    private List<Competencia> competencia = new ArrayList<>();
+    private List<Telefone> telefones = new ArrayList<>();
 
     public Perfil(Long id, String nome, String sobre, String cargoAtual, Localidade localidade, String email,
             String endereco, String complemento, String bairro, String cidade, Date dataNascimento,
