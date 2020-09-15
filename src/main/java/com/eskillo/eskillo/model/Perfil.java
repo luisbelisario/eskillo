@@ -6,11 +6,24 @@ import java.util.List;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@EqualsAndHashCode(exclude = {"nome", 
+"sobre", 
+"cargoAtual", 
+"localidade", 
+"email", 
+"endereco",
+"complemento",
+"bairro",
+"cidade",
+"dataNascimento",
+"visibilidadePerfil",
+"fotografia"})
 
 public class Perfil {
     
@@ -26,12 +39,11 @@ public class Perfil {
     private String cidade;
     private Date dataNascimento;
     private boolean visibilidadePerfil;
+    private Fotografia fotografia;
 
     private List<Experiencia> experiencias = new ArrayList<>();
     private List<Formacao> formacoes = new ArrayList<>();
     private List<Curso> cursos = new ArrayList<>();
-    private List<Competencia> competencia = new ArrayList<>();
+    private List<Competencia> competencias = new ArrayList<>();
     private List<Telefone> telefones = new ArrayList<>();
-
-    
 }

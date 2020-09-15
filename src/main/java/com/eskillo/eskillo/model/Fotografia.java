@@ -1,17 +1,15 @@
 package com.eskillo.eskillo.model;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.EqualsAndHashCode;
 
 @Data
-@NoArgsConstructor
-@AllArgsConstructor
+@EqualsAndHashCode(exclude = {"fotografia", "tipoArquivo"})
 
 public class Fotografia {
     
+    private Long id;
     private byte[] fotografia;
     private String tipoArquivo;
 
-   
 }
