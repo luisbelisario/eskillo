@@ -1,6 +1,11 @@
 package com.eskillo.eskillo.model;
 
-public class AreaEstudo {
+import java.io.Serializable;
+
+public class AreaEstudo implements Serializable {
+    
+    
+    private static final long serialVersionUID = 1L;
     
     private Long id;
     private String descricao;
@@ -10,7 +15,10 @@ public class AreaEstudo {
         this.descricao = descricao;
     }
 
-    public Long getId() {
+    public AreaEstudo() {
+	}
+
+	public Long getId() {
         return id;
     }
 
@@ -50,4 +58,11 @@ public class AreaEstudo {
             return false;
         return true;
     }
+
+    @Override
+    public String toString() {
+        return descricao + " ("  + id + ") ";
+    }
+
+    
 }
